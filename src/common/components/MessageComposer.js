@@ -3,6 +3,7 @@ import moment from 'moment';
 import { Input } from 'react-bootstrap';
 import uuid from 'node-uuid';
 
+// Message input (The field where you type your message)
 export default class MessageComposer extends Component {
 
   static propTypes = {
@@ -28,7 +29,7 @@ export default class MessageComposer extends Component {
         channelID: this.props.activeChannel,
         text: text,
         user: user,
-        time: moment.utc().format('lll')
+        time: moment.utc().format('YYYY-MM-DD HH:mm')
       };
       socket.emit('new message', newMessage);
       socket.emit('stop typing', { user: user.username, channel: activeChannel });
@@ -57,7 +58,8 @@ export default class MessageComposer extends Component {
         width: '100%',
         flexShrink: '0',
         order: '2',
-        marginTop: '0.5em'
+        marginTop: '20px',
+        bottom: '0'
       }}>
       <Input
           style={{

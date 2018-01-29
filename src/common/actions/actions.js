@@ -103,7 +103,7 @@ export function fetchMessages(channel) {
 }
 
 function receiveMessages(json, channel) {
-  const date = moment().format('lll');
+  const date = moment().format('YYYY-MM-DD HH:mm');
   return {
     type: types.LOAD_MESSAGES_SUCCESS,
     json,

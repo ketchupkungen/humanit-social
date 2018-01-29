@@ -4,13 +4,17 @@ a {
   color: white;
 }
 
+a:hover {
+  text-decoration: none;
+  color: #696969;
+}
+
 html,
-body,
-/*.container {
+body {
   height: 100%;
   padding: 0;
   margin: 0;
-}*/
+}
 
 .react {
   height: 100%;
@@ -21,7 +25,9 @@ body,
   color: white;
   background: #696969;
   width: 200px;
--ms-flex: 0 1rem;
+  position: fixed;
+  height: 100%;
+/*-ms-flex: 0 1rem;
 -webkit-box-flex:  0;
 -moz-box-flex:  0;
 -ms-box-flex:  0;
@@ -34,11 +40,16 @@ justify-content: flex-start;
 -moz-box-direction: normal;
 -webkit-flex-direction: column;
 -ms-flex-direction: column;
-flex-direction: column;
+flex-direction: column;*/
 }
 
+
+/*FEED CONTENT*/
+/*feed area*/
 .main {
   margin: 0;
+  padding-top: 50px;
+  padding-left: 200px;
   background: #e8e5e5;
  -ms-flex: 1;
  -webkit-box-flex: 1;
@@ -51,36 +62,6 @@ flex-direction: column;
  align-content: flex-start;
  align-items: inherit;
 }
-
-span[class*="glyphicon-one-fine"] {
-    padding-top: 0.46em;
-    padding-right: 0.4em;
-}
-
-.glyphicon-one-fine-green-dot:before {
-    content:"\25cf";
-    font-size: 0.7em;
-    color: #34A853;
-}
-
-.glyphicon-one-fine-empty-dot:before {
-    content:"\25cb";
-    font-size: 0.7em;
-}
-
-.btn-primary {
-  border: none;
-}
-
-/*CHANNEL*/
-
-
-
-
-
-
-
-/* DASHBOARD TEXTING */
 
 /*Sender of message*/
 .dashName {
@@ -112,4 +93,45 @@ span[class*="glyphicon-one-fine"] {
   padding-bottom: '0.3em';
 }
 
+span[class*="glyphicon-one-fine"] {
+    padding-top: 0.46em;
+    padding-right: 0.4em;
+}
 
+.glyphicon-one-fine-green-dot:before {
+    content:"\25cf";
+    font-size: 0.7em;
+    color: #34A853;
+}
+
+.glyphicon-one-fine-empty-dot:before {
+    content:"\25cb";
+    font-size: 0.7em;
+}
+
+.btn-primary {
+  border: none;
+}
+
+/*CHANNEL*/
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 500px) {
+  .nav {
+    position: relative;
+  }
+
+  .main {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}

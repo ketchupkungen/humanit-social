@@ -9,6 +9,8 @@ import { Modal, DropdownButton, MenuItem, Button, Navbar, NavDropdown, Nav, NavI
 
 export default class Chat extends Component {
 
+
+
   collapseOnSelect;
 
   static propTypes = {
@@ -80,11 +82,11 @@ export default class Chat extends Component {
   handleSendDirectMessage() {
     const { dispatch, socket, channels, user } = this.props;
     const doesPrivateChannelExist = channels.filter(item => {
-      return item.name === (`${this.state.targetedUser.username}+${user.username}` || `${user.username} and ${this.state.targetedUser.username}`)
+      return item.name === (`${this.state.targetedUser.username}+${user.username}` || `${user.username}+${this.state.targetedUser.username}`)
     })
     if (user.username !== this.state.targetedUser.username && doesPrivateChannelExist.length === 0) {
       const newChannel = {
-        name: `${this.state.targetedUser.username}+${user.username}`,
+        name: `${this.state.targetedUser.username} and ${user.username}´s private chat`,
         id: Date.now(),
         private: true,
         between: [this.state.targetedUser.username, user.username]
@@ -102,8 +104,8 @@ export default class Chat extends Component {
     const { messages, socket, channels, activeChannel, typers, dispatch, user, screenWidth} = this.props;
     const filteredMessages = messages.filter(message => message.channelID === activeChannel);
     const username = this.props.user.username;
-    const dropDownMenu = (
 
+    const dropDownMenu = (
       <div style={{'width': '200px', 'top': '0', alignSelf: 'baseline', padding: '0', margin: '0', order: '1'}}>
         <DropdownButton key={1} style={{'width': '200px'}} id="user-menu"  bsSize="large" bsStyle="success" title={username}>
           <MenuItem style={{'width': '200px'}} eventKey="4">Profile</MenuItem>
@@ -111,7 +113,6 @@ export default class Chat extends Component {
           <MenuItem style={{'width': '200px'}} eventKey="4" onSelect={::this.handleSignOut}>Sign out</MenuItem>
         </DropdownButton>
       </div>
-
     );
     const PrivateMessageModal = (
       <div>
@@ -173,16 +174,18 @@ export default class Chat extends Component {
       </div>
     );
     return (
+      <div>
       <div style={{margin: '0', padding: '0', height: '100%', width: '100%', display: '-webkit-box'}}>
+
         {screenWidth < 500 ? mobileNav : bigNav }
         <div className="main">
-          <header style={{background: '#696969', color: '#ADFF2F', flexGrow: '0', order: '0', fontSize: '2.3em', paddingLeft: '0.2em'}}>
+          {/*<header style={{background: '#696969', color: '#ADFF2F', flexGrow: '0', order: '0', fontSize: '2.3em', paddingLeft: '0.2em'}}>
             <div>
             {activeChannel}
             </div>
-          </header>
+          </header>*/}
           {PrivateMessageModal}
-          <ul style={{wordWrap: 'break-word', margin: '0', overflowY: 'auto', padding: '0', paddingBottom: '1em', flexGrow: '1', order: '1'}} ref="messageList">
+          <ul style={{wordWrap: 'break-word', margin: '0', overflowY: 'auto', padding: '0',paddingTop:'50px', paddingBottom: '10px', flexGrow: '1', order: '1'}} ref="messageList">
             {filteredMessages.map(message =>
               <MessageListItem handleClickOnUser={::this.handleClickOnUser} message={message} key={message.id} />
             )}
@@ -211,6 +214,7 @@ export default class Chat extends Component {
             <span>Several people are typing!</span>
           </div>}
         </footer>
+      </div>
       </div>
     );
   }

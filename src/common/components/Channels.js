@@ -85,6 +85,7 @@ export default class Channels extends Component {
     const filteredChannels = channels.slice(0, 8);
     const moreChannelsBoolean = channels.length > 8;
     const restOfTheChannels = channels.slice(8);
+
     const newChannelModal = (
       <div>
         <Modal key={1} show={this.state.addChannelModal} onHide={::this.closeAddChannelModal}>
@@ -93,27 +94,28 @@ export default class Channels extends Component {
           </Modal.Header>
           <Modal.Body>
             <form onSubmit={::this.handleModalSubmit} >
-            <Input
-              ref="channelName"
-              type="text"
-              help={this.validateChannelName() === 'error' && 'A channel with that name already exists!'}
-              bsStyle={this.validateChannelName()}
-              hasFeedback
-              name="channelName"
-              autoFocus="true"
-              placeholder="Enter the channel name"
-              value={this.state.channelName}
-              onChange={::this.handleModalChange}
-            />
+              <Input
+                ref="channelName"
+                type="text"
+                maxLength="30"
+                help={this.validateChannelName() === 'error' && 'A channel with that name already exists!'}
+                bsStyle={this.validateChannelName()}
+                hasFeedback
+                name="channelName"
+                autoFocus="true"
+                placeholder="Enter the channel name"
+                value={this.state.channelName}
+                onChange={::this.handleModalChange}
+              />
             </form>
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={::this.closeAddChannelModal}>Cancel</Button>
-            <Button disabled={this.validateChannelName() === 'error' && 'true'} onClick={::this.handleModalSubmit} type="submit">
+            <Button bsStyle="danger" onClick={::this.closeAddChannelModal}>Cancel</Button>
+            <Button bsStyle="success" disabled={this.validateChannelName() === 'error' && 'true'} onClick={::this.handleModalSubmit} type="submit">
               Create Channel
             </Button>
           </Modal.Footer>
-          </Modal>
+        </Modal>
       </div>
     );
     const moreChannelsModal = (
@@ -121,7 +123,7 @@ export default class Channels extends Component {
         <Modal key={2} show={this.state.moreChannelsModal} onHide={::this.closeMoreChannelsModal}>
           <Modal.Header closeButton >
             <Modal.Title>More Channels</Modal.Title>
-            <a onClick={::this.createChannelWithinModal} style={{'cursor': 'pointer', 'color': '#85BBE9'}}>
+            <a onClick={::this.createChannelWithinModal}>
               Create a channel
             </a>
           </Modal.Header>
@@ -133,7 +135,7 @@ export default class Channels extends Component {
             </ul>
           </Modal.Body>
           <Modal.Footer>
-            <button onClick={::this.closeMoreChannelsModal}>Cancel</button>
+            <Button onClick={::this.closeMoreChannelsModal}>Cancel</Button>
           </Modal.Footer>
         </Modal>
       </div>
@@ -143,9 +145,9 @@ export default class Channels extends Component {
         <div>
           <span style={{paddingLeft: '0.8em', fontSize: '1.5em'}}>
             Channels
-            <button onClick={::this.openAddChannelModal} style={{fontSize: '0.8em', 'background': 'Transparent', marginLeft: '2.8em', 'backgroundRepeat': 'noRepeat', 'border': 'none', 'cursor': 'pointer', 'overflow': 'hidden', 'outline': 'none'}}>
+            <Button onClick={::this.openAddChannelModal} style={{fontSize: '0.8em', 'background': 'Transparent', marginLeft: '2.8em', 'backgroundRepeat': 'noRepeat', 'border': 'none', 'cursor': 'pointer', 'overflow': 'hidden', 'outline': 'none'}}>
               <Glyphicon glyph="plus" />
-            </button>
+            </Button>
           </span>
         </div>
           {newChannelModal}
@@ -157,8 +159,8 @@ export default class Channels extends Component {
               }).length} channel={channel} key={channel.id} onClick={::this.handleChangeChannel} />
               )}
           </ul>
-          <Button style={{width: '200px'}} bsStyle="default" >
-            {moreChannelsBoolean && <a onClick={::this.openMoreChannelsModal} style={{'cursor': 'pointer', 'color': '#696969'}}> + {channels.length - 8} more...</a>}
+          <Button style={{width: '200px'}}>
+            {moreChannelsBoolean && <a onClick={::this.openMoreChannelsModal}> + {channels.length - 8} more...</a>}
             {moreChannelsModal}
           </Button>
         </div>
