@@ -143,7 +143,7 @@ export default class Channels extends Component {
     return (
       <section>
         <div>
-          <span style={{paddingLeft: '0.8em', fontSize: '1.5em'}}>
+          <span style={{paddingLeft: '10px', fontSize: '15px'}}>
             Channels
             <Button onClick={::this.openAddChannelModal} style={{fontSize: '0.8em', 'background': 'Transparent', marginLeft: '2.8em', 'backgroundRepeat': 'noRepeat', 'border': 'none', 'cursor': 'pointer', 'overflow': 'hidden', 'outline': 'none'}}>
               <Glyphicon glyph="plus" />
@@ -152,9 +152,9 @@ export default class Channels extends Component {
         </div>
           {newChannelModal}
         <div>
-          <ul style={{display: 'flex', flexDirection: 'column', listStyle: 'none', margin: '0', overflowY: 'auto', padding: '0'}}>
+          <ul className="channelList">
             {filteredChannels.map(channel =>
-              <ChannelListItem  style={{paddingLeft: '0.8em', background: '#2E6DA4', height: '0.7em'}} messageCount={messages.filter(msg => {
+              <ChannelListItem className="channelListItem" messageCount={messages.filter(msg => {
                 return msg.channelID === channel.name;
               }).length} channel={channel} key={channel.id} onClick={::this.handleChangeChannel} />
               )}

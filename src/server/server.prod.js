@@ -96,10 +96,10 @@ function renderFullPage(html, initialState) {
       <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
-        <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+        <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-        <title>React Redux Socket.io Chat</title>
+        <title>Human IT - Social</title>
       </head>
       <body>
         <container id="react">${html}</container>

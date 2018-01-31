@@ -1,6 +1,11 @@
 exports = module.exports = function(io) {
   io.on('connection', function(socket) {
-    socket.join('Lobby');
+    socket.join('General');
+
+    // New
+    socket.join('Jolly');
+    socket.join('Work');
+
     socket.on('chat mounted', function(user) {
       // TODO: Does the server need to know the user?
       socket.emit('receive socket', socket.id)

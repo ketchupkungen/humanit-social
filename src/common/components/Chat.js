@@ -5,7 +5,7 @@ import Channels from './Channels';
 import * as actions from '../actions/actions';
 import * as authActions from '../actions/authActions';
 import TypingListItem from './TypingListItem';
-import { Modal, DropdownButton, MenuItem, Button, Navbar, NavDropdown, Nav, NavItem } from 'react-bootstrap';
+import { Modal, DropdownButton, MenuItem, Button, Navbar, NavDropdown, Nav, NavItem, Grid, Row, Col } from 'react-bootstrap';
 
 export default class Chat extends Component {
 
@@ -134,36 +134,32 @@ export default class Chat extends Component {
       </div>
     );
     const mobileNav = (
-      <Navbar fixedTop style={{backgroundColor: '#696969', color: 'white'}}>
+      <div>
+        {/*<Grid>
+          <Row className="show-grid">
+            <Col xs={12} md={8}>
+              <code>&lt;{'Col xs={12} md={8}'} /">&gt;</code>
+            </Col>
+            <Col xs={6} md={4}>
+              <code>&lt;{'Col xs={6} md={4}'} /">&gt;</code>
+            </Col>
+          </Row>
+        </Grid>*/}
+        <Navbar fixedTop style={{backgroundColor: '#696969', color: 'white'}}>
 
-
-
-      <Navbar.Toggle />
-        {/*<Navbar.Collapse style={{maxHeight: '100%'}}>
-          {/*<Button bsStyle="primary" onSelect={::this.handleSignOut}> Sign out
-          </Button>*/}
-
-            {/*<DropdownButton key={1} style={{'width': '200px'}} id="user-menu" bsSize="large" bsStyle="success" title={username}>
-              <MenuItem style={{'width': '200px'}} eventKey="4">Profile</MenuItem>
-              <MenuItem style={{'width': '200px'}} eventKey="4">Options</MenuItem>
-              <MenuItem style={{'width': '200px'}} eventKey="4" onSelect={::this.handleSignOut}>Sign out</MenuItem>
-            </DropdownButton>
-          <br/>
-          <section style={{order: '2', marginTop: '1.5em'}}>
-            <Channels socket={socket} onClick={::this.changeActiveChannel} channels={channels} messages={messages} dispatch={dispatch} />
-          </section>
-        </Navbar.Collapse>*/}
-        <Navbar.Collapse style={{border: '0px'}}>
-          <Nav>
-            <navitem>
-              <Channels socket={socket} onClick={::this.changeActiveChannel} channels={channels} messages={messages} dispatch={dispatch} />
-            </navitem>
-          </Nav>
-        </Navbar.Collapse>
-        <div style={{background: '#696969', color: '#ADFF2F', fontSize: '20px', paddingLeft: '20px'}}>
-        {activeChannel}
-        </div>
-      </Navbar>
+        <Navbar.Toggle />
+          <Navbar.Collapse style={{border: '0px'}}>
+            <Nav>
+              <navitem>
+                <Channels socket={socket} onClick={::this.changeActiveChannel} channels={channels} messages={messages} dispatch={dispatch} />
+              </navitem>
+            </Nav>
+          </Navbar.Collapse>
+          <div style={{background: '#696969', color: '#ADFF2F', fontSize: '20px', paddingLeft: '20px'}}>
+          {activeChannel}
+          </div>
+        </Navbar>
+      </div>
     );
     const bigNav = (
       <div className="nav">
