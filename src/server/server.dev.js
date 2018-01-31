@@ -15,7 +15,7 @@ import createHistory from 'history/createMemoryHistory'
 import DevTools from '../common/containers/DevTools';
 import cors from 'cors';
 import webpack from 'webpack';
-import webpackConfig from '../../webpack.config.dev'
+import webpackConfig from '../../config/webpack.config.dev'
 const compiler = webpack(webpackConfig);
 import User from './models/User.js';
 import passport from 'passport';
@@ -59,6 +59,7 @@ app.get('/*', function(req, res) {
   const location = history.location
   match({ routes, location }, (err, redirectLocation, renderProps) => {
 
+    // Standard user, for testing purpose
     const initialState = {
       auth: {
         user: {
@@ -68,6 +69,7 @@ app.get('/*', function(req, res) {
         }
       }
     }
+
     const store = configureStore(initialState);
     // console.log(redirectLocation);
     // if(redirectLocation) {
@@ -116,10 +118,10 @@ function renderFullPage(html, initialState) {
       <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
-        <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+        <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-        <title>React Redux Socket.io Chat</title>
+        <title>Human IT - Social</title>
       </head>
       <body>
         <container id="react">${html}</container>
