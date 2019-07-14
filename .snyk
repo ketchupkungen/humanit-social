@@ -1,0 +1,39 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:extend:20180424':
+    - jsdom > request > extend:
+        patched: '2019-07-14T14:54:18.756Z'
+    - node-sass > node-gyp > request > extend:
+        patched: '2019-07-14T14:54:18.756Z'
+    - node-sass > request > extend:
+        patched: '2019-07-14T14:54:18.756Z'
+  'npm:hoek:20180212':
+    - node-sass > node-gyp > request > hawk > boom > hoek:
+        patched: '2019-07-14T14:54:18.756Z'
+    - node-sass > node-gyp > request > hawk > hoek:
+        patched: '2019-07-14T14:54:18.756Z'
+    - jsdom > request > hawk > cryptiles > boom > hoek:
+        patched: '2019-07-14T14:54:18.756Z'
+    - node-sass > node-gyp > request > hawk > cryptiles > boom > hoek:
+        patched: '2019-07-14T14:54:18.756Z'
+    - jsdom > request > hawk > boom > hoek:
+        patched: '2019-07-14T14:54:18.756Z'
+    - jsdom > request > hawk > hoek:
+        patched: '2019-07-14T14:54:18.756Z'
+    - jsdom > request > hawk > sntp > hoek:
+        patched: '2019-07-14T14:54:18.756Z'
+    - node-sass > node-gyp > request > hawk > sntp > hoek:
+        patched: '2019-07-14T14:54:18.756Z'
+  'npm:stringstream:20180511':
+    - jsdom > request > stringstream:
+        patched: '2019-07-14T14:54:18.756Z'
+    - node-sass > request > stringstream:
+        patched: '2019-07-14T14:54:18.756Z'
+    - node-sass > node-gyp > request > stringstream:
+        patched: '2019-07-14T14:54:18.756Z'
+  'npm:tunnel-agent:20170305':
+    - node-sass > node-gyp > request > tunnel-agent:
+        patched: '2019-07-14T14:54:18.756Z'
