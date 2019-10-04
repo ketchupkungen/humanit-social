@@ -37,3 +37,8 @@ patch:
   'npm:tunnel-agent:20170305':
     - node-sass > node-gyp > request > tunnel-agent:
         patched: '2019-07-14T14:54:18.756Z'
+  SNYK-JS-HTTPSPROXYAGENT-469131:
+    - snyk > proxy-agent > https-proxy-agent:
+        patched: '2019-10-04T05:18:59.457Z'
+    - snyk > proxy-agent > pac-proxy-agent > https-proxy-agent:
+        patched: '2019-10-04T05:18:59.457Z'
