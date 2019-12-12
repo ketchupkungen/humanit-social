@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.13.5
+version: v1.14.0
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -37,3 +37,6 @@ patch:
   'npm:tunnel-agent:20170305':
     - node-sass > node-gyp > request > tunnel-agent:
         patched: '2019-07-14T14:54:18.756Z'
+  SNYK-JS-TREEKILL-536781:
+    - snyk > snyk-sbt-plugin > tree-kill:
+        patched: '2019-12-12T05:14:10.773Z'
