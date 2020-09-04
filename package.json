@@ -77,7 +77,7 @@
     "lodash": "^4.17.12",
     "moment": "^2.10.6",
     "mongoose": "^5.2.12",
-    "node-sass": "^4.9.1",
+    "node-sass": "^4.13.1",
     "node-uuid": "^1.4.7",
     "passport": "^0.2.2",
     "passport-facebook": "^2.0.0",
