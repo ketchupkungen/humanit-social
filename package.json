@@ -86,7 +86,7 @@
     "react-app-rewired": "^1.4.1",
     "react-bootstrap": "^0.28.5",
     "react-cookie": "^0.4.3",
-    "react-dev-utils": "^5.0.2",
+    "react-dev-utils": "^11.0.4",
     "react-dom": "^0.14.9",
     "react-redux": "^3.0.1",
     "react-router": "^2.0.0-rc4",
