@@ -98,7 +98,7 @@
     "socket.io": "^1.7.4",
     "socket.io-client": "^1.7.4",
     "style-loader": "^0.12.4",
-    "snyk": "^1.193.1"
+    "snyk": "^1.465.0"
   },
   "snyk": true
 }
