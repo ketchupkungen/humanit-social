@@ -29,14 +29,14 @@
     "react-transform"
   ],
   "devDependencies": {
-    "babel-eslint": "^4.1.2",
+    "babel-eslint": "^10.1.0",
     "babel-plugin-react-transform": "^2.0.0",
     "css-loader": "^0.15.1",
     "eslint": "^1.4.3",
     "eslint-config-airbnb": "1.0.0",
     "eslint-plugin-react": "^3.4.0",
     "expect": "^1.10.0",
-    "mocha": "^2.3.2",
+    "mocha": "^10.1.0",
     "mocha-jsdom": "^1.0.0",
     "nock": "^2.18.2",
     "raw-loader": "^0.5.1",
