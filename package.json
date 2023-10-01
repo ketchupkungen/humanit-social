@@ -56,7 +56,7 @@
     "webpack-isomorphic-tools": "^0.8.8"
   },
   "dependencies": {
-    "autoprefixer": "^7.2.5",
+    "autoprefixer": "^10.0.0",
     "babel-core": "^6.3.26",
     "babel-loader": "^6.2.0",
     "babel-polyfill": "^6.3.14",
